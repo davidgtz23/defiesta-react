@@ -1,10 +1,8 @@
-// import React from 'react'; 
-
 import { useEffect, useState } from "react";
 
 const API_URL = process.env.REACT_APP_DEFIESTA_API;
 
-const LoginPage = () => {
+const Home = () => {
 
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
@@ -14,7 +12,6 @@ const LoginPage = () => {
         fetch('https://defiesta-api.herokuapp.com/providers')
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             setResults(data);
         });
     }, []);
@@ -25,10 +22,9 @@ const LoginPage = () => {
             return;
         }
 
-        fetch('https://defiesta-api.herokuapp.com/providers')
+        fetch(`https://defiesta-api.herokuapp.com/providers?query=${query}`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             setResults(data);
         });
     }
@@ -49,8 +45,8 @@ const LoginPage = () => {
                     <h3>Todo lo que necesitas para tu evento aquí lo podrás encontrar</h3>
                     <div className="search__form">
                         <div className="search__form-group">
-                            <input type="text" placeholder="¿Qué necesitas?" />
-                            <button type="submit">Buscar</button>
+                            <input type="text" placeholder="¿Qué necesitas?" onChange={(e) => setQuery(e.target.value)}/>
+                            <button type="submit" onClick={search}>Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -132,4 +128,4 @@ const LoginPage = () => {
     </>;
   }
   
-  export default LoginPage;
+  export default Home;

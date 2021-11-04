@@ -667,6 +667,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #8a9da7;
 }
 
+.error404 {
+  margin: 4rem 0;
+  text-align: center;
+  font-size: 4rem;
+  color: #8b009f;
+}
+
 @media (max-width: 767px) {
   .home__providers-item {
     border: solid 1px #8a9da7;
