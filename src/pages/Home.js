@@ -45,17 +45,15 @@ const LoginPage = () => {
                 }}>
 
 
-                    <div className="search">
-                        <h3>Todo lo que necesitas para tu evento aquí lo podrás encontrar</h3>
-                        <div className="search__form">
-                            <form action="">
-                                <div className="search__form-group">
-                                    <input type="text" placeholder="¿Qué necesitas?" />
-                                    <button type="submit">Buscar</button>
-                                </div>
-                            </form>
+                <div className="search">
+                    <h3>Todo lo que necesitas para tu evento aquí lo podrás encontrar</h3>
+                    <div className="search__form">
+                        <div className="search__form-group">
+                            <input type="text" placeholder="¿Qué necesitas?" />
+                            <button type="submit">Buscar</button>
                         </div>
                     </div>
+                </div>
 
 
                 </div>
@@ -107,7 +105,7 @@ const LoginPage = () => {
                         <div className="home__places-content">
                         {results.map(({ name, category, image, location, isPremium }, index) => (
                             <article className="home__places-item" key={index}>
-                                <img src="./assets/images/salon.png" alt="Lugar Jardín" />
+                                <img src={image} alt="Lugar Jardín" />
                                 <div className="title">
                                     {name}
                                 </div>
